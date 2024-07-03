@@ -1,0 +1,9 @@
+.main {
+    background-color: #1D9B9D;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-image: url('../Images/bg.png');
+    background-position: center;
+    background-size: 50%;
+}
