@@ -28,7 +28,7 @@ export const Main_page = () => {
                 </div>
             </div>
             <div className='h-[10vh] text-center'>
-                <button className='text-white px-4 py-2 bg-cyan-800 rounded text-xl hover:text-2xl box-border'><Link to="/JS">Let's Start &rarr;</Link></button>
+                <button className='text-white px-4 py-2 bg-cyan-800 rounded text-xl hover:text-2xl box-border transition-width duration-500'><Link to="/JS">Let's Start &rarr;</Link></button>
             </div>
         </div>
     )

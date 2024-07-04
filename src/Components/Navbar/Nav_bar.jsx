@@ -14,11 +14,11 @@ export const Nav_bar = () => {
                     <li className='hover:text-gray-500 cursor-pointer'><Link to="/JS">Java Script</Link></li>
                     <li className='hover:text-gray-500 cursor-pointer'><Link to="/react">React JS</Link></li>
                     <li className='hover:text-gray-500 cursor-pointer'><Link to="/Html">HTML</Link></li>
-                    <li className='hover:text-gray-500 cursor-pointer'><Link to="/More">More</Link></li>
+                    <li className='hover:text-gray-500 cursor-pointer'><Link to="">More</Link></li>
                 </ul>
                 <ul className='flex gap-8 mr-10 '>
                     <li className='hover:text-gray-300 cursor-pointer bg-cyan-700 py-1 px-4 rounded'><Link to="/login">Log In</Link></li>
-                    <li className='hover:text-gray-300 cursor-pointer bg-cyan-700 py-1 px-4 rounded'>Sign Up</li>
+                    <li className='hover:text-gray-300 cursor-pointer bg-cyan-700 py-1 px-4 rounded'><Link to="/signup">Sign Up</Link></li>
                 </ul>
             </div>
         </div>
