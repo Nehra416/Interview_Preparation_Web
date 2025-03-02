@@ -1,0 +1,8 @@
+.side_bar li {
+    padding-bottom: 16px;
+    cursor: pointer;
+}
+
+.side_bar li:hover {
+    color: rgb(209 213 219);
+}

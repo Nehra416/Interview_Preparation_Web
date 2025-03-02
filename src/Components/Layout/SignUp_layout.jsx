@@ -4,6 +4,8 @@ import { Footer } from '../Footer/Footer'
 import { SignUp } from '../Extra/SignUp'
 
 export const SignUp_layout = () => {
+    // const signup = []
+    
     return (
         <div>
             <Nav_bar />

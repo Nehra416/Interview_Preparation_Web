@@ -4,6 +4,8 @@ import { LogIn } from '../Extra/LogIn'
 import { Footer } from '../Footer/Footer'
 
 export const Login_layout = () => {
+    // const login = []
+    
     return (
         <div>
             <Nav_bar />
