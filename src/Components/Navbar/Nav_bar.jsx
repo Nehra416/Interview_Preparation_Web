@@ -5,6 +5,7 @@ import cross from '../Images/cross.png'
 import qa2 from '../Images/qa2.png'
 import axios from 'axios'
 import { useLoginContext } from '../../LoginContext'
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 export const Nav_bar = (props) => {
     const { logIn, setLogIn } = useLoginContext();
@@ -40,7 +41,7 @@ export const Nav_bar = (props) => {
         console.log("function is call");
         // console.log(location.pathname)
 
-        await axios.get(`http://localhost:5000${location.pathname}`)
+        await axios.get(`${SERVER_URL}${location.pathname}`)
             .then((response) => {
                 console.log(response.data) // array ko array ke hi state me save kerna parega 
                 setAllData(response.data); // Set the data array from the response object
@@ -69,9 +70,12 @@ export const Nav_bar = (props) => {
 
                     {(logIn || localStorage.getItem('userLogIn')) ?
                         <li className={`hover:text-gray-300 cursor-pointer bg-cyan-700 py-1 px-4 rounded ${pathname === "/login" ? 'text-gray-300' : ''}`} onClick={logOut}>Log Out</li>
-                        : <li className={`hover:text-gray-300 cursor-pointer bg-cyan-700 py-1 px-4 rounded ${pathname === "/login" ? 'text-gray-300' : ''}`}><Link to="/login">Log In</Link></li>
+                        : <div className='flex gap-3'>
+                            <li className={`hover:text-gray-300 cursor-pointer bg-cyan-700 py-1 px-4 rounded ${pathname === "/login" ? 'text-gray-300' : ''}`}><Link to="/login">Log In</Link></li>
+                            <li className={`hover:text-gray-300 cursor-pointer bg-cyan-700 py-1 px-4 rounded ${pathname === "/signup" ? 'text-gray-300' : ''}`}><Link to="/signup">Sign Up</Link></li>
+                        </div>
                     }
-                    <li className={`hover:text-gray-300 cursor-pointer bg-cyan-700 py-1 px-4 rounded ${pathname === "/signup" ? 'text-gray-300' : ''}`}><Link to="/signup">Sign Up</Link></li>
+
                 </ul>
 
                 {/* img for side bar */}

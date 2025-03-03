@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { useLoginContext } from '../../LoginContext';
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 export const LogIn = () => {
   const { setLogIn } = useLoginContext()
@@ -27,7 +28,7 @@ export const LogIn = () => {
     const { email, password } = formData
     console.log({ email, password })
 
-    axios.post("http://localhost:5000/login", { email, password })
+    axios.post("${SERVER_URL}/login", { email, password })
       .then((response) => {
         console.log(response)
         if (response.status === 201) {

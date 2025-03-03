@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 export const SignUp = () => {
   const navigate = useNavigate();
@@ -48,7 +49,7 @@ export const SignUp = () => {
       }
       else {
         if (checkbox) {
-          axios.post("http://localhost:5000/signup", { firstName, lastName, email, password, Confirm_password })
+          axios.post("${SERVER_URL}/signup", { firstName, lastName, email, password, Confirm_password })
             .then((response) => {
               console.log("Response is : ", response);
               // console.log(response.data.msg)

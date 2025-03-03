@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { toast } from 'react-toastify'
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Add = () => {
     const [dbPath, setDbPath] = useState()
@@ -23,7 +24,7 @@ const Add = () => {
 
         // need a if else condition for question type checkBoxes.
         dbPath ?
-            axios.post(`http://localhost:5000/${dbPath}`, { Q, ans, ex })
+            axios.post(`${SERVER_URL}/${dbPath}`, { Q, ans, ex })
                 .then((response) => {
                     console.log(response)
 

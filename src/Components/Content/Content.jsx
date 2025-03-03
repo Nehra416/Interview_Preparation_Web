@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Ex_Highlighter from './Ex_Highlighter';
-
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 export const Content = (props) => {
   const [allData, setAllData] = useState([]); // array *** 
@@ -26,7 +26,7 @@ export const Content = (props) => {
     console.log("function is call");
     console.log(location.pathname)
 
-    await axios.get(`http://localhost:5000${location.pathname}`)
+    await axios.get(`${SERVER_URL}${location.pathname}`)
       .then((response) => {
         console.log(response.data) // array ko array ke hi state me save kerna parega 
         setAllData(response.data); // Set the data array from the response object
